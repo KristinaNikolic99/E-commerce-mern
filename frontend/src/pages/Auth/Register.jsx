@@ -50,11 +50,11 @@ const Register = () => {
     }
 
   return (
-    <section className='pl-[10rem] flex flex-wrap'>
-        <div className="mr-[4rem] mt-[5rem]">
+    <section className='pl-10 md:pl-[10rem] lg:pl-[10rem] flex flex-wrap'>
+        <div className="mr-[4rem] mt-[5rem] w-full max-w-[40rem]">
             <h1 className='text-2xl font-semibold mb-4'>Register</h1>
 
-            <form onSubmit={submitHandler} className='container w-[40rem]'>
+            <form onSubmit={submitHandler} className='container w-full'>
                 <div className="my-[2rem]">
                     <label 
                         htmlFor="name" 
@@ -136,7 +136,7 @@ const Register = () => {
         <img
         src={backgroundImg}
         alt=""
-        className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg"
+        className="h-[55rem] w-[59%] xl:block md:hidden hidden sm:hidden rounded-lg"
       />
     </section>
   )
