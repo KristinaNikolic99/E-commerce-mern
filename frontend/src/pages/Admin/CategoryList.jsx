@@ -8,10 +8,12 @@ import {
     useFetchCategoriesQuery} from "../../redux/api/categoryApiSlice";
 import CategoryForm from '../../components/CategoryForm';
 import Modal from '../../components/Modal';
+import { data } from 'react-router';
+import AdminMenu from './AdminMenu';
 
 
 const CategoryList = () => {
-    const {data: categories} = useFetchCategoriesQuery();
+    const {data: categories, refetch } = useFetchCategoriesQuery();
     const [name, setName] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [updatingName, setUpdatingName] = useState('');
@@ -35,6 +37,7 @@ const CategoryList = () => {
                 toast.error(result.error);
             } else {
                 setName("");
+                refetch();
                 toast.success(`${result.name} is created`)
             }
         } catch (error) {
@@ -62,6 +65,7 @@ const CategoryList = () => {
       if (result.error) {
         toast.error(result.error);
       } else {
+        refetch();
         toast.success(`${result.name} is updated`);
         setSelectedCategory(null);
         setUpdatingName("");
@@ -80,8 +84,10 @@ const CategoryList = () => {
                 toast.error(result.error);
             } else {
                 toast.success(`${result.name} is deleted.`);
+                refetch();
                 setSelectedCategory(null);
                 setModalVisible(false);
+                
             }
         } catch (error) {
             console.log(error);
@@ -90,8 +96,10 @@ const CategoryList = () => {
     }
 
   return (
-    <div className='ml-[10rem] flex flex-col md:flex-row'>
-        {/* <AdminMenu /> */}
+    <div className='flex flex-col md:flex-row'>
+        
+        <AdminMenu/>
+
         <div className='md:w-3/4 p-3'>
             <div className='h-12'>
                 Manage Categories

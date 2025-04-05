@@ -58,8 +58,8 @@ const Navigation = () => {
     className={`
         flex flex-col justify-between text-white bg-black fixed top-0 left-0 h-full transition-all ease-in-out duration-300
         w-[20%]
-        sm:w-[14%] md:w-[12%] lg:w-[8%] xl:w-[4%]
-        hover:w-[26%] hover:md:w-[20%] hover:lg:w-[10%] hover:xl:w-[12%]
+        sm:w-[14%] md:w-[12%]  xl:w-[4%]
+        hover:w-[26%] hover:md:w-[20%] hover:xl:w-[12%]
     `}
     id="navigation-container"
     onMouseEnter={toggleSidebar}

@@ -23,7 +23,7 @@ const addProduct = asyncHandler(async (req, res) => {
 
         const product = new Product({...req.fields});
         await product.save();
-        res.json(product);
+        res.status(201).json(product);
 
     } catch (error) {
         console.error(error);
@@ -59,7 +59,7 @@ const updateProductDetails = asyncHandler(async (req, res) => {
 
         await product.save();
 
-        res.json(product);
+        res.status(200).json(product);
 
     } catch (error) {
         console.error(error);
