@@ -5,11 +5,12 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
+  
   return (
     <>
       <ToastContainer />
       <Navigation />
-      <main className="py-3">
+      <main className="py-3 md:ml-[8rem] ml-[5rem] xl:ml-[6rem] mr-1">
         <Outlet />
       </main>
     </>
