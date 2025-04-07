@@ -23,13 +23,13 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="container md:mx-[9rem]">
+      <div className="container md:mx-[5rem] xl:mx-[20rem]">
         <div className="flex flex-col md:flex-row">
           <div className="md:p-3 p-5">
             <div className="md:ml-[2rem] text-xl font-bold h-12">
               All Products ({products.length})
             </div>
-            <div className="flex flex-wrap justify-around items-center">
+            <div className="flex flex-wrap justify-around xl:justify-start gap-6 items-stretch">
               {products.map((product) => (
                 <Link
                   key={product._id}
@@ -40,10 +40,10 @@ const AllProducts = () => {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-[10rem] object-cover"
+                      className="w-[10rem] object-cover h-[130px] xl:h-[10rem]"
                     />
                     <div className="md:p-4 p-15 flex flex-col justify-around">
-                      <div className="flex justify-between">
+                      <div className="flex justify-between items-center">
                         <h5 className="text-xl font-semibold mb-2">
                           {product?.name}
                         </h5>
@@ -53,11 +53,11 @@ const AllProducts = () => {
                         </p>
                       </div>
 
-                      <p className="text-gray-400 xl:w-[30rem] lg:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4">
+                      <p className="text-gray-400 xl:w-[30rem] lg:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4 min-h-[80px]">
                         {product?.description?.substring(0, 160)}...
                       </p>
 
-                      <div className="flex justify-between">
+                      <div className="flex justify-between items-center">
                         <Link
                           to={`/admin/product/update/${product._id}`}
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
